@@ -75,18 +75,32 @@ function appMenu() {
 
   function addEngineer() {
     inquirer.prompt([
-      //
-      // YOUR CODE HERE
-      // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+      {
+        type: "input",
+        name: "engineerName",
+        message: "Name goes here:"
+      },
+      {
+        type: "input",
+        name: "engineerId",
+        message: "employee ID here:"
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "Email goes here:"
+      },
+      {
+        type: "input",
+        name: "engineerUsername",
+        message: "Github username:"
+      }
     ]).then(answers => {
-      //
-      // YOUR CODE HERE
-      // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS 
-      //    TO THE ENGINEER CLASS CONSTRUCTOR
-      // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
-      // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
-      // 
+    const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerUsername)
+
+    teamMembers.push(engineer);
+
+    idArray.push(answers.engineerId);
  
       createTeam();
     });
@@ -94,10 +108,9 @@ function appMenu() {
 
   function addIntern() {
     inquirer.prompt([
-      //
-      // YOUR CODE HERE
-      // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+    {
+      
+    }
     ]).then(answers => {
       //
       // YOUR CODE HERE
