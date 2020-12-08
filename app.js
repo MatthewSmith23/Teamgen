@@ -109,17 +109,31 @@ function appMenu() {
   function addIntern() {
     inquirer.prompt([
     {
-      
-    }
+      type: "input",
+      name: "internName",
+      message: "Name goes here:",
+    },
+    {
+    type: "input",
+    name: "internId",
+    message: "Employee ID here:",
+    },
+    {
+      type: "input",
+      name: "internEmail",
+      message: "Email goes here:",
+    },
+    {
+      type: "input",
+      name: "internSchool",
+      message: "Where did you get your degree from ?",
+    },
     ]).then(answers => {
-      //
-      // YOUR CODE HERE
-      // 1. CREATE A VARIABLE TO STORE THE INTERN OBJECT INSTANTIATED WITH THE INTERN CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS 
-      //    TO THE INTERN CLASS CONSTRUCTOR
-      // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
-      // 3. ADD (PUSH) THE INTERN ID TO THE idArray ARRAY
-      // 
+     const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+     teamMembers.push(intern);
 
+     idArray.push(answers.internId);
+    
       createTeam();
     });
   }
@@ -135,3 +149,5 @@ function appMenu() {
   createManager();
 
 }
+
+appMenu();
