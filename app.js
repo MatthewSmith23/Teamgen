@@ -31,12 +31,12 @@ function appMenu() {
       {
         type: "input",
         name: "managerEmail",
-        message: "email goes here",
+        message: "email goes here:",
       },
       {
         type: "input",
         name: "managerOfficeNumber",
-        message: "office phone number here", 
+        message: "office phone number here:", 
       }
     ]).then(answers => {
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
